@@ -22,16 +22,34 @@
         <p class="section-main__description">NFT marketplace UI created with Anima for Figma.
           Collect, buy and sell art from more than 20k NFT artists.</p>
         <div class="section-main__nft">
-          <img src="" alt="" class="section-main__img">
+          <picture class="section-main__img">
+            <source srcset="./images/main-image-desktop.jpg" media="(min-width: 1280px)" />
+            <source srcset="./images/main-image-tablet.jpg" media="(min-width: 768px)" />
+            <img src="./images/main-image-mobile.jpg" alt="image" />
+          </picture>
           <div class="section-main__image-desc">
             <h3 class="section-main__img-name"></h3>
             <div class="section-main__img-creator">
-              <img src="" alt="">
+              <img src="./images/image-avatar.jpg" alt="avatar">
               <p>Animakid</p>
             </div>
           </div>
-
         </div>
+        <button class="section-main__btn">Get Started</button>
+        <ul class="section-main__list">
+          <li class="section-main__list-item">
+            <span>240k+ </span>
+            <p>Total Sale</p>
+          </li>
+          <li class="section-main__list-item">
+            <span>100k+</span>
+            <p>Auctions</p>
+          </li>
+          <li class="section-main__list-item">
+            <span>240k+</span>
+            <p>Artists</p>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
