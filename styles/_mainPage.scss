@@ -1,0 +1,114 @@
+@use "variables";
+
+.section-main {
+
+  &__title {
+    font: 28px / 40px variables.$fontMainTitle;
+    margin-bottom: 10px;
+  }
+
+  &__description {
+    margin-bottom: 40px;
+  }
+
+  &__nft {
+    background: #3B3B3B;
+    margin-bottom: 40px;
+    border-radius: 20px;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 206px;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px 20px 0 0;
+      object-fit: cover;
+    }
+    &-desc {
+      padding: 22px 20px;
+    }
+    &-name {
+      font: 22px / 30px variables.$fontMainTitle;
+      margin-bottom: 10px;
+    }
+    &-creator {
+      display: flex;
+      align-items: center;
+      > img {
+        border-radius: 50%;
+        margin-right: 12px;
+      }
+    }
+  }
+
+  &__btn {
+    border-radius: variables.$defaultRadius;
+    background: variables.$primaryColor;
+    color: variables.$fontColor;
+    font: 16px / 1.4 variables.$fontMainTitle;
+    padding: 20px 10px;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    &-item {
+      > span {
+        font: 22px / 1.6 variables.$fontSubTitle;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    &__holder {
+      display: grid;
+      grid-template-columns: repeat(2, 330px);
+      grid-template-areas:
+            "title nft"
+            "description nft"
+            "btn nft"
+            "list nft";
+      align-items: start;
+      grid-gap: 20px 30px;
+    }
+
+    &__title {
+      grid-area: title;
+      margin: 0;
+      font: 38px / 1.2 variables.$fontMainTitle;
+    }
+
+    &__description {
+      grid-area: description;
+      margin: 0;
+    }
+
+    &__nft {
+      grid-area: nft;
+      margin: 0;
+    }
+
+    &__img {
+      height: 222px;
+    }
+
+    &__btn {
+      grid-area: btn;
+      margin: 0;
+      width: max-content;
+      padding: 20px 50px;
+    }
+
+    &__list {
+      grid-area: list;
+    }
+
+  }
+}

@@ -43,6 +43,10 @@ a {
   text-decoration: none;
 }
 
+button {
+  border: none;
+}
+
 body {
   font: 16px/1.4 "WorkSansRegular", sans-serif;
   background: #2b2b2b;
@@ -54,6 +58,111 @@ body {
   max-width: 490px;
   width: 100%;
   margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 750px;
+  }
+}
+
+.section {
+  padding: 40px 0;
+}
+@media screen and (min-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+}
+
+.section-main__title {
+  font: 28px/40px "WorkSansSemiBold", sans-serif;
+  margin-bottom: 10px;
+}
+.section-main__description {
+  margin-bottom: 40px;
+}
+.section-main__nft {
+  background: #3B3B3B;
+  margin-bottom: 40px;
+  border-radius: 20px;
+}
+.section-main__img {
+  display: block;
+  width: 100%;
+  height: 206px;
+}
+.section-main__img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px 20px 0 0;
+  object-fit: cover;
+}
+.section-main__img-desc {
+  padding: 22px 20px;
+}
+.section-main__img-name {
+  font: 22px/30px "WorkSansSemiBold", sans-serif;
+  margin-bottom: 10px;
+}
+.section-main__img-creator {
+  display: flex;
+  align-items: center;
+}
+.section-main__img-creator > img {
+  border-radius: 50%;
+  margin-right: 12px;
+}
+.section-main__btn {
+  border-radius: 20px;
+  background: #A259FF;
+  color: #fff;
+  font: 16px/1.4 "WorkSansSemiBold", sans-serif;
+  padding: 20px 10px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+.section-main__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+.section-main__list-item > span {
+  font: 22px/1.6 "SpaceMonoBold", sans-serif;
+}
+@media screen and (min-width: 768px) {
+  .section-main__holder {
+    display: grid;
+    grid-template-columns: repeat(2, 330px);
+    grid-template-areas: "title nft" "description nft" "btn nft" "list nft";
+    align-items: start;
+    grid-gap: 20px 30px;
+  }
+  .section-main__title {
+    grid-area: title;
+    margin: 0;
+    font: 38px/1.2 "WorkSansSemiBold", sans-serif;
+  }
+  .section-main__description {
+    grid-area: description;
+    margin: 0;
+  }
+  .section-main__nft {
+    grid-area: nft;
+    margin: 0;
+  }
+  .section-main__img {
+    height: 222px;
+  }
+  .section-main__btn {
+    grid-area: btn;
+    margin: 0;
+    width: max-content;
+    padding: 20px 50px;
+  }
+  .section-main__list {
+    grid-area: list;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
