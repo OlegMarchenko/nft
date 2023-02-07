@@ -16,10 +16,14 @@ ul, ol {
 
 a {
   text-decoration: none;
+  color: variables.$fontColor;
+  transition: variables.$defaultTransition;
 }
 
 button {
   border: none;
+  background: none;
+  cursor: pointer;
 }
 
 body {
@@ -35,6 +39,15 @@ body {
   margin: 0 auto;
   @media screen and (min-width: 768px) {
     max-width: 750px;
+    &__nav {
+      max-width: 794px;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    max-width: 1110px;
+    &__nav {
+      max-width: 1240px;
+    }
   }
 }
 

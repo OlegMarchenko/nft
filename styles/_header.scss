@@ -1,0 +1,129 @@
+@use "variables";
+@use "mixins";
+
+
+.header {
+  padding: 15px 0;
+  &__holder {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__logo {
+    display: block;
+    width: 182px;
+    height: 24px;
+    > svg {
+      display: block;
+      width: inherit;
+      height: inherit;
+    }
+  }
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 48px;
+    height: 48px;
+    padding: 10px;
+    > span {
+      display: block;
+      height: 2px;
+      border-radius: 2px;
+      background: #fff;
+      width: calc(100% - 5px);
+      &:nth-child(2) {
+        width: 100%;
+      }
+    }
+  }
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, .9);
+    padding: 75px 15px 50px;
+    height: 100vh;
+    transition: .5s all;
+    visibility: hidden;
+    z-index: 0;
+    > ul {
+      > li {
+        margin-bottom: 30px;
+        text-align: center;
+        > a {
+          font: 34px / 1.3 variables.$fontMainTitle;
+        }
+      }
+    }
+  }
+  &__btn {
+    @include mixins.btn;
+    margin: auto 0 0 0;
+  }
+  input {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    opacity: 0;
+    &:checked {
+      z-index: 3;
+      ~ .header__menu {
+        z-index: 2;
+      }
+      ~ .header__nav {
+        top: 0;
+        visibility: visible;
+        z-index: 1;
+      }
+    }
+  }
+  @media screen and (min-width: 768px) {
+    &__btn {
+      margin: auto auto 0;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    padding: 20px 0;
+    input,
+    &__menu {
+      display: none;
+    }
+    &__nav {
+      flex-direction: row;
+      align-items: center;
+      position: static;
+      visibility: visible;
+      height: auto;
+      background: none;
+      padding: 0;
+      justify-content: end;
+      transition: initial;
+      > ul {
+        display: flex;
+        > li {
+          margin: 0 50px 0 0;
+          > a {
+            font: 16px / 1.3 variables.$fontMainTitle;
+            &:hover {
+              color: variables.$primaryColor;
+            }
+          }
+          &:last-child {
+            margin: 0 30px 0 0;
+          }
+        }
+      }
+    }
+    &__btn {
+      margin: 0;
+    }
+  }
+}
