@@ -30,6 +30,9 @@ body {
   font: 16px / 1.4 variables.$fontMain;
   background: variables.$bg;
   color: variables.$fontColor;
+  &.blocked {
+    overflow: hidden;
+  }
 }
 
 .container {
